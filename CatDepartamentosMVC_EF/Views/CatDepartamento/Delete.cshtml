@@ -1,0 +1,48 @@
+﻿@model CatDepartamentosMVC_EF.Models.CatDepartamento
+
+@{
+    ViewBag.Title = "Eliminar Departamento";
+}
+
+<h2>Eliminar Departamento</h2>
+
+<h3>Estas seguro que deseas eliminar este Departamento de la Base de datos?</h3>
+<div>
+    <h4>Departamentos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id_Ofi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id_Ofi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Depto_Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Depto_Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Depto_Activo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Depto_Activo)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
